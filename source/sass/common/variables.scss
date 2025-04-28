@@ -1,0 +1,35 @@
+// Fonts
+
+$primary-font: "Montserrat", "Arial", sans-serif;
+
+// Colors
+
+$text-basic: #2d383f;
+$text-light: #ffffff;
+$bg-primary: #0266c1;
+$button-active: #1c3374;
+$button-disabled: #999999;
+$bullet-hover: #d9d9d9;
+$error: #ff121f;
+$transparent: rgba(255, 255, 255, 0);
+
+// Breakpoint
+
+$breakpoint-desktop: 1440px;
+$breakpoint-tablet: 768px;
+$breakpoint-gap: 0.02px;
+
+// Viewports
+
+$mobile-only: "(max-width: #{$breakpoint-tablet - $breakpoint-gap})";
+$tablet-width: "(min-width: #{$breakpoint-tablet})";
+$tablet-only: "(min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - $breakpoint-gap})";
+$desktop-width: "(min-width: #{$breakpoint-desktop})";
+
+
+// Adaptive sizes
+
+$max-content-width: 1440px;
+$mobile-side: 15px;
+$tablet-side: 45px;
+$desktop-side: 120px;

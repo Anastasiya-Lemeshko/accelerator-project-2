@@ -1,0 +1,101 @@
+.input-text {
+  position: relative;
+}
+
+.input-text__input {
+  box-sizing: border-box;
+  padding: 17px 15px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  color: $text-basic;
+  background-color: $text-light;
+  border: 1px solid rgba(2, 102, 193, 0.1);
+  border-radius: 2px;
+  transition: border 0.3s;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: none;
+    border: 1px solid $text-basic;
+  }
+
+  &:hover {
+    border: 1px solid $bg-primary;
+  }
+
+  &:disabled {
+    border: 1px solid $button-disabled;
+  }
+}
+
+.input-text:invalid,
+.input-text__input--error {
+  border: 1px solid $error;
+
+  &:focus-visible {
+    border: 1px solid $error;
+  }
+
+  &:hover {
+    border: 1px solid $error;
+  }
+
+  &:disabled {
+    border: 1px solid $button-disabled;
+  }
+}
+
+.input-text__input::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  color: rgba(45, 56, 63, 0.5);
+  transform: translateY(56px);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.1s;
+}
+
+.input-text__input:focus::placeholder,
+.input-text__input:focus-visible::placeholder {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.input-text__label {
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 2px 15px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  text-align: left;
+  color: rgba(45, 56, 63, 0.5);
+  cursor: pointer;
+  opacity: 1;
+  transform-origin: top;
+  transition: transform 0.3s, opacity 0.3s;
+
+  @media #{$tablet-width} {
+    padding: 3px 30px 2px;
+  }
+}
+
+.input-text:has(.input-text__input:focus) .input-text__label,
+.input-text:has(.input-text__input:focus-visible) .input-text__label,
+.input-text.input-text:has(.input-text__input:not(:placeholder-shown)) .input-text__label {
+  transform: scaleY(0);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+  cursor: default;
+}
+
+.input-text:has(.input-text__input:disabled) .input-text__label {
+  color: $button-disabled;
+}
+
+

@@ -1,0 +1,102 @@
+.button {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 19px;
+  font-family: $primary-font;
+  font-size: 16px;
+  line-height: 1;
+  font-weight: 500;
+  color: $text-light;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid $bg-primary;
+  background-color: $bg-primary;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s, border 0.3s;
+
+  &:focus-visible {
+    outline: none;
+    color: $button-active;
+    border: 1px solid $transparent;
+    background-color: $text-light;
+  }
+
+  &:hover {
+    color: $button-active;
+    border: 1px solid $button-active;
+    background-color: $text-light;
+  }
+
+  &:active {
+    color: $text-light;
+    border: 1px solid $button-active;
+    background-color: $button-active;
+  }
+
+  &:disabled {
+    color: $text-light;
+    border: 1px solid $button-disabled;
+    background-color: $button-disabled;
+    pointer-events: none;
+    cursor: default;
+  }
+}
+
+.button--disabled {
+  color: $text-light;
+  border: 1px solid $button-disabled;
+  background-color: $button-disabled;
+  pointer-events: none;
+  cursor: default;
+}
+
+.button--swiper {
+  --icon-color: #{$text-light};
+
+  position: relative;
+  width: 37px;
+  height: 35px;
+  padding: 0;
+
+  &:focus-visible {
+    --icon-color: #{$button-active};
+
+    background-color: $text-light;
+  }
+
+  &:hover {
+    --icon-color: #{$button-active};
+
+    background-color: $transparent;
+  }
+
+  &:active {
+    --icon-color: #{$text-light};
+
+    background-color: $button-active;
+  }
+
+  &:disabled {
+    --icon-color: #{$text-light};
+
+    background-color: $button-disabled;
+  }
+}
+
+.button--swiper::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  content: "";
+  width: 37px;
+  height: 35px;
+  mask-image: url("/__spritemap#sprite-arrow-view");
+  mask-repeat: no-repeat;
+  mask-size: 37px 35px;
+  mask-position: center;
+  background-color: var(--icon-color);
+  transition: background-color 0.3s;
+}

@@ -1,4 +1,20 @@
 // Vendor
-// ---------------------------------
-
 @import "vendor/normalize";
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+// Global
+@import "./common/variables.scss";
+@import "./common/fonts.scss";
+@import "./common/global.scss";
+@import "./common/visually-hidden.scss";
+
+// Blocks
+@import "./blocks/button.scss";
+@import "./blocks/input-text.scss";
+@import "./blocks/callback.scss";
+
+
+// @import "./blocks";
+
